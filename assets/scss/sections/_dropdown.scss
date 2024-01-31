@@ -1,0 +1,437 @@
+.dropdown{
+    &-header{
+        position: fixed;
+        top: 135px;
+        left: 0;
+        width: 100%;
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        visibility: hidden;
+        @include trn();
+
+        &.active{
+            top: 105px;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &-bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    &-head{
+        background-color: $dropdown-black-color;
+        position: relative;
+        z-index: 2;
+        padding: 10px 0;
+
+        &__title{
+            font-size: 16px;
+            color: $white-color;
+            text-align: center;
+        }
+    }
+
+    &-body{
+        flex: 1 1 auto;
+        background-color: $white-color;
+        position: relative;
+        z-index: 2;
+
+        &_img{
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            z-index: -10;
+        }
+
+        &__row{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            gap: 40px;
+        }
+
+        &__left{
+            display: flex;
+            gap: 100px;
+            padding: 24px 0;
+
+            &-one{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+
+                &-title{
+                    color: $dropdown-black-color;
+                    font-family: $montserrat;
+                    font-size: 18px;
+                    // border-bottom: 1px solid $orange-color;
+                }
+
+                &-subtitle{
+                    width: 280px;
+                }
+
+                &-link{
+                    @extend %flex-center;
+                }
+            }
+            
+            &-two{
+                display: flex;
+                flex-direction: column;
+                
+                &-link{
+                    @extend %flex-center;
+                    padding: 10px;
+
+                    &-title{
+                        font-size: 16px;
+                        color: $dropdown-black-color;
+                        opacity: 0.5;
+
+                        &:hover{
+                            color: $black-color;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+        }
+
+
+        &__right{
+            width: 100%;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.08) 0%, rgba(255, 255, 255, 0.5) 100%);
+            padding: 20px 85px;
+            height: 100%;
+            display: flex;
+            position: relative;
+            z-index: 2;
+
+            &-one{
+                &__head{
+                    &__title{
+                        color: $dropdown-black-color;
+                        font-family: $montserrat;
+                        font-size: 13px;
+                        line-height: 26px;
+                    }
+
+                    &_links{
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    &_link{
+                        padding: 5px;
+                        font-size: 14px;
+                        color: $dropdown-black-color;
+                    }
+                }
+
+                &__middle{
+                    &__title{
+                        color: $dropdown-black-color;
+                        font-family: $montserrat;
+                        font-size: 13px;
+                        line-height: 26px;
+                    }
+
+                    &_links{
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    &_link{
+                        padding: 5px;
+                    }
+                }
+
+                &__brend{
+                    display: flex;
+                    flex-direction: column;
+                    margin: 15px 0;
+
+
+                   &_title{
+                        color: $dropdown-black-color;
+                        font-family: $montserrat;
+                        font-size: 13px;
+                        line-height: 26px;
+                   }
+                }
+
+                &__bottom{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    &_row{
+                        display: flex;
+                        gap: 5px;
+                    }
+                    &_brown{
+                        width: 22px;
+                        height: 22px;
+                        background-color: #705c25;
+                        border-radius: 50%;
+                        cursor: pointer;
+
+                        &:hover{
+                            border: 3px solid $black-color;
+                        }
+                    }
+
+                    &_skyblue{
+                        width: 22px;
+                        height: 22px;
+                        background-color: #00cccc;
+                        border-radius: 50%;
+                        cursor: pointer;
+
+                        &:hover{
+                            border: 3px solid $black-color;
+                        }
+                    }
+
+                    &_purple{
+                        width: 22px;
+                        height: 22px;
+                        background-color: #cc66cc;
+                        border-radius: 50%;
+                        cursor: pointer;
+
+                        &:hover{
+                            border: 3px solid $black-color;
+                        }
+                    }
+
+                    &_orange{
+                        width: 22px;
+                        height: 22px;
+                        background-color: #f2007b;
+                        border-radius: 50%;
+                        cursor: pointer;
+
+                        &:hover{
+                            border: 3px solid $black-color;
+                        }
+                    }
+
+                    &_black{
+                        width: 22px;
+                        height: 22px;
+                        background-color: $black-color;
+                        border-radius: 50%;
+                        cursor: pointer;
+
+                        &:hover{
+                            border: 3px solid gray;
+                        }
+                    }
+
+                    &_gray{
+                        width: 22px;
+                        height: 22px;
+                        background-color: #cbcbcb;
+                        border-radius: 50%;
+                        cursor: pointer;
+
+                        &:hover{
+                            border: 3px solid $black-color;
+                        }
+                    }
+
+                    &_whete{
+                        width: 22px;
+                        height: 22px;
+                        background-color: #f2e1ba;
+                        border-radius: 50%;
+                        cursor: pointer;
+
+                        &:hover{
+                            border: 3px solid $black-color;
+                        }
+                    }
+
+                    &_white{
+                        width: 22px;
+                        height: 22px;
+                        background-color: $white-color;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        border: 1px solid rgba(0, 0, 0, 0.2);
+
+                        &:hover{
+                            border: 3px solid $black-color;
+                        }
+                    }
+
+                    &_red{
+                        width: 22px;
+                        height: 22px;
+                        background-color: #f20016;
+                        border-radius: 50%;
+                        cursor: pointer;
+
+                        &:hover{
+                            border: 3px solid $black-color;
+                        }
+                    }
+
+                    &-row{
+                        display: flex;
+                        gap: 5px;
+                        &_1{
+                            width: 22px;
+                            height: 22px;
+                            background-color: #A9998C;
+                            border-radius: 50%;
+                            cursor: pointer;
+
+                            &:hover{
+                            border: 3px solid $black-color;
+                        }
+                        }
+                        &_2{
+                            width: 22px;
+                            height: 22px;
+                            background-color: $white-color;
+                            border: 1px solid rgba(0, 0, 0, 0.2);
+                            border-radius: 50%;
+                            cursor: pointer;
+
+                            &:hover{
+                            border: 3px solid $black-color;
+                        }
+                        }
+                        &_3{
+                            width: 22px;
+                            height: 22px;
+                            background-color: #8252dd;
+                            border-radius: 50%;
+                            cursor: pointer;
+
+                            &:hover{
+                            border: 3px solid $black-color;
+                        }
+                        }
+                        &_4{
+                            width: 22px;
+                            height: 22px;
+                            background-color: #5875A2;
+                            border-radius: 50%;
+                            cursor: pointer;
+
+                            &:hover{
+                            border: 3px solid $black-color;
+                        }
+                        }
+                        &_5{
+                            width: 22px;
+                            height: 22px;
+                            background-color: #397AF2;
+                            border-radius: 50%;
+                            cursor: pointer;
+
+                            &:hover{
+                            border: 3px solid $black-color;
+                        }
+                        }
+                        &_6{
+                            width: 22px;
+                            height: 22px;
+                            background-color: #0dc13a;
+                            border-radius: 50%;
+                            cursor: pointer;
+
+                            &:hover{
+                            border: 3px solid $black-color;
+                        }
+                        }
+                        &_7{
+                            width: 22px;
+                            height: 22px;
+                            background-color: #f2e024;
+                            border-radius: 50%;
+                            cursor: pointer;
+
+                            &:hover{
+                            border: 3px solid $black-color;
+                        }
+                        }
+                    }
+                }
+            }
+
+            &-two{
+                padding-left: 60px;
+                &_head{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    &_title{
+                        font-weight: bold;
+                        font-size: 13px;
+                        line-height: 20px;
+                    }
+
+                    &_link{
+                        font-weight: 300;
+                        font-size: 13px;
+                        line-height: 20px;
+                    }
+                }
+
+                &_middle{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    margin-top: 15px;
+
+                    &_title{
+                        font-weight: bold;
+                        font-size: 13px;
+                        line-height: 20px;
+                    }
+
+                    &_link{
+                        font-weight: 300;
+                        font-size: 13px;
+                        line-height: 20px;
+                    }
+                }
+
+                &_bottom{
+                    margin-top: 15px;
+
+                    &_title{
+                        font-weight: bold;
+                        font-size: 13px;
+                        line-height: 20px;
+                    }
+
+                    &_link{
+                        font-weight: 300;
+                        font-size: 13px;
+                        line-height: 20px;
+                    }
+                }
+            }
+
+        }
+        
+    }
+}

@@ -1,0 +1,32 @@
+
+
+@mixin flex($align: unset, $justify: unset){
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+
+@mixin media($width){
+    @media screen and (max-width: #{$width}px) {
+        @content;
+    }
+}
+
+
+@mixin adaptive-value($property, $starSize, $minSize) {
+    $addSize: $starSize - $minSize;
+    #{$property}: $starSize + px;
+    @media (max-width:#{1280 + px}) {
+        #{$property}: calc(
+            #{$minSize + px} + #{$addSize} *
+              ((100vw - 320px) / #{1280 - 320})
+        );
+    }
+}
+
+
+
+@mixin trn($s: 0.2s){
+    transition: all #{$s} ease-in-out;
+}
